@@ -18,6 +18,5 @@ from django.urls import path
 from photo_app.views import index
 
 urlpatterns = [
-    path('', index),
-    
+    path('', index),   
 ]
