@@ -4,10 +4,13 @@
   {% endblock %} 
   {% block content %}
   {% for up in upload %}
+  
   <h1> {{up.}}</h1>
   <h1> {{up.caption}}</h1>
   <h1> {{up.User}}</h1>
    <h1>{{up.timestamp}}</h1>
+   <a href="{% url 'photo_app:edit' up.id%}"> Edit</a>
+   <img src="{{up.photo.url}}" alt="pic" style="height: 150px; width:150px;">
    
    {% endfor %}
    {% endblock %}

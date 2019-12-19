@@ -11,3 +11,9 @@ class PhotoModel(models.Model):
      likes=models.PositiveIntegerField(default=0)
 
 
+class CommentModel(models.Model):
+    comment=models.TextField()
+    timestamp= models.DateTimeField(auto_now_add=True)
+    commented_by=models.ForeignKey(UserModel,on_delete=models.CASCADE)
+    parent_post=models.ForeignKey(PhotoModel,on_delete=models.CASCADE)
+
